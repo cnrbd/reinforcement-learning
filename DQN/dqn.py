@@ -121,7 +121,7 @@ class Estimator():
           s: State input of shape [batch_size, 4, 160, 160, 3]
 
         Returns:
-          Tensor of shape [batch_size, NUM_VALID_ACTIONS] containing the estimated 
+          Tensor of shape [batch_size, NUM_VALID_ACTIONS] containing the estimated
           action values.
         """
         return sess.run(self.predictions, { self.X_pl: s })
@@ -220,9 +220,9 @@ def deep_q_learning(sess,
         num_episodes: Number of episodes to run for
         experiment_dir: Directory to save Tensorflow summaries in
         replay_memory_size: Size of the replay memory
-        replay_memory_init_size: Number of random experiences to sampel when initializing 
+        replay_memory_init_size: Number of random experiences to sampel when initializing
           the reply memory.
-        update_target_estimator_every: Copy parameters from the Q estimator to the 
+        update_target_estimator_every: Copy parameters from the Q estimator to the
           target estimator every N steps
         discount_factor: Gamma discount factor
         epsilon_start: Chance to sample a random action when taking an action.
@@ -343,7 +343,7 @@ def deep_q_learning(sess,
                 replay_memory.pop(0)
 
             # Save transition to replay memory
-            replay_memory.append(Transition(state, action, reward, next_state, done))   
+            replay_memory.append(Transition(state, action, reward, next_state, done))
 
             # Update statistics
             stats.episode_rewards[i_episode] += reward
