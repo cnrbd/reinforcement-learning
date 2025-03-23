@@ -76,7 +76,7 @@ class BlackjackEnv(gym.Env):
         # Ref: http://www.bicyclecards.com/how-to-play/blackjack/
         self.natural = natural
         # Start the first game
-        self._reset()        # Number of 
+        self._reset()        # Number of
         self.nA = 2
 
     def reset(self):
@@ -91,7 +91,7 @@ class BlackjackEnv(gym.Env):
 
     def _step(self, action):
         assert self.action_space.contains(action)
-        if action:  # hit: add a card to players hand and return
+        if action:  #  for twisting : add a card to players hand and return
             self.player.append(draw_card(self.np_random))
             if is_bust(self.player):
                 done = True
